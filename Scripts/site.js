@@ -1,4 +1,4 @@
-function download(text, name, type)
+﻿function download(text, name, type)
 {
     var a = document.createElement("a");
     var file = new Blob([text], { type: type });
@@ -6,11 +6,14 @@ function download(text, name, type)
     a.download = name;
     a.click();
 }
+
+var baseJsonObject = "{\"Characters\":[],\"Groups\":[]}";
+
 var myJsonObject;
 function loadData()
 {
     var string = localStorage["myJsonObject"];
-    if (string == undefined) string = "{\"Characters\":[],\"Groups\":[]}";
+    if (string === undefined || string === null || string === "null") string = baseJsonObject;
     results = JSON.parse(string);
 
     myJsonObject = deserialize(results);
@@ -19,35 +22,40 @@ function loadData()
     {
         var pmyJsonObject =
             {
-                Characters: vResults.Characters.map(function (c) { return new Character(c.name); }),
-                Groups: vResults.Groups.map(function (g) { return new Group(g.name); })
+                Characters: vResults.Characters.map(function (c) { return new Character(c); }),
+                Groups: vResults.Groups.map(function (g) { return new Group(g); })
             };
         return pmyJsonObject;
     }
 
 
-
-
-
+    myJsonObject.Characters.forEach(function (c) { CreateNewDrawerIcon(c) });
+    myJsonObject.Groups.forEach(function (c) { CreateNewDrawerIcon(c); });
 
 }
+
+function CreateNewDrawerIcon(vTitle)
+{
+    var target = document.getElementsByClassName("menuItemFolder_Characters")[0];
+    target.appendChild(NewMenuItem("person", c.name));
+}
+function CreateNewDrawerIcon(vTitle)
+{
+    var target = document.getElementsByClassName("menuItemFolder_Groups")[0];
+    target.appendChild(NewMenuItem("group", c.name));
+}
+
+
 function saveJsonToCache()
 {
-    localStorage["myJsonObject"] = JSON.stringify(this.myJsonObject);
+    localStorage["myJsonObject"] = JSON.stringify(myJsonObject);
 }
+
 function resetJsonCase()
 {
-    localStorage["myJsonObject"] = null;
+    myJsonObject = JSON.parse(baseJsonObject);
+    saveJsonToCache();
 }
-
-
-//Object.defineProperty(
-//    myDataStructure,
-//    "Characters",
-//    {
-//        get: function () { return this.value; },
-//        set: function (y) { this.someFunction(y); }
-//    });
 
 
 
@@ -65,28 +73,24 @@ function myApp()
     //  = tag
 
     for (var i = 0; i < allTextFields.length; i++) { mdc.textfield.MDCTextfield.attachTo(allTextFields[i]); }
+    document.querySelector('.addButton').addEventListener('click', function (f) { addMenu.open = !addMenu.open; });      //  FAB
+    document.querySelector('.menu').addEventListener('click', function (f) { sidedrawer.open = true; });                //  Drawer
 
 
-    document.querySelector('.addButton').addEventListener('click', () => addMenu.open = !addMenu.open)      //  FAB
-    document.querySelector('.menu').addEventListener('click', () => sidedrawer.open = true);                //  Drawer
-
-  
     document.querySelector('#menuCreateNewCharacter').addEventListener('click', function (evt)
     {
         newCharacterDialogControl.lastFocusedTarget = evt.target;
         newCharacterDialogControl.show();
-        var textField = document.getElementById("newCharacterDialog-textfield");
-        //textField.focus();
-    })
+    });
 
     newCharacterDialogControl.foundation_.cancel = function (shouldNotify)
     {
-        if (shouldNotify) { this.adapter_.notifyCancel() }
-        var textField = document.getElementById("newCharacterDialog-textfield")
+        if (shouldNotify) { this.adapter_.notifyCancel(); }
+        var textField = document.getElementById("newCharacterDialog-textfield");
         textField.value = null;
         console.log("Cancel New Character");
         this.close();
-    }
+    };
 
     newCharacterDialogControl.foundation_.accept = function (shouldNotify)
     {
@@ -98,46 +102,64 @@ function myApp()
             saveJsonToCache();
             this.close();
         }
+    };
+}
+
+function customObject(vName, vID, vType)
+{
+    this.type = vType
+    this.name = vName;
+    this.id = vID ? vID : getMaxID(vType);
+    this.toString = function () { return this.name; };
+}
+function Character(vName, vID)
+{
+    if (typeof vName == "string")
+    {
+        customObject.call(this, vName, vID, "Characters");
+    }
+    else if (typeof vName == "object")
+    {
+        customObject.call(this, vName.name,vName.id, "Characters")
     }
 }
 
-function Character(vName)
+function Group(vName, vID)
 {
-    this.name = vName;
-    this.toString = function () { return this.name; }
+    if (typeof vName == "string")
+    {
+        customObject.call(this, vName, vID, "Groups");
+    }
+    else if (typeof vName == "object")
+    {
+        customObject.call(this, vName.name, vName.id)
+    }
 }
 
+function getMaxID(vType)
+{
+    var maxId = 0;
+    myJsonObject[vType].forEach(function (c) { maxId = Math.max(c.id, maxId); });
+    return maxId + 1;
+}
 
-////newCharacterDialog
-//var newCharacterDialogControl = new mdc.dialog.MDCDialog(document.querySelector('#newCharacterDialog'));
-//newCharacterDialogControl.listen('MDCDialog:accept', function ()
-//{
-//    var tfield = document.getElementById("newCharacterDialog-textfield");
-//    var tfieldParent = tfield.parentNode;
-//    var textfield = new mdc.textfield.MDCTextfield(tfieldParent);
-//    if (tfield.checkValidity)
-//    {
-//        console.log('accepted');
-//    }
-//    else
-//    {
-//        console.log("accepted but not valid");
-//    }
-//    console.log(tfield.value);
+function NewMenuItem(vType, vText)
+{
+    var html = "";
+    var anchor = document.createElement("a");
+    var info = document.createElement("i");
 
-//})
-//newCharacterDialogControl.listen('MDCDialog:cancel', function ()
-//{
-//    //Label is getting a float above, need to remove it
-//    console.log('canceled');
-//    document.getElementById("newCharacterDialog-textfield").value = null;
-//    console.log(document.getElementById("newCharacterDialog-textfield").value);
-//})
+    anchor.classList.add("mdc-list-item");
+    anchor.href = "#";
+    info.classList.add("material-icons");
+    info.classList.add("mdc-list-item__start-detail");
+    info.setAttribute("aria-hidden", "true");
+    info.innerText = vType;
+    anchor.innerText = vText;
+    anchor.insertBefore(info, anchor.firstChild);
 
-
-
-
-
+    return anchor;
+}
 
 
 ////<!--                      Menu Start                      -->

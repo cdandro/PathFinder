@@ -23,11 +23,11 @@
                     <input type="text" id="newCharacterDialog-textfield" class="mdc-textfield__input" name="chara" aria-controls="newCharacterDialog-textfield-helptext" required>
                     <label for="newCharacterDialog-textfield" class="mdc-textfield__label">Character Name</label>
                 </div>
-                <!--
-                    mdc-textfield-helptext
-                    mdc-textfield-helptext--validation-msg
-                    mdc-textfield-helptext--persistent
-                -->
+
+                <!--mdc-textfield-helptext
+                mdc-textfield-helptext--validation-msg
+                mdc-textfield-helptext--persistent-->
+
                 <p id="newCharacterDialog-textfield-helptext" class="mdc-textfield-helptext" aria-hidden="true">
                     This is what the character will be called.
                 </p>
@@ -41,7 +41,7 @@
     </aside>
 
     <!--                        Drawer Start                        -->
-    <aside class="mdc-temporary-drawer mdc-temporary-drawer">
+    <aside class="mdc-temporary-drawer">
         <nav class="mdc-temporary-drawer__drawer">
             <header class="mdc-temporary-drawer__header">
                 <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
@@ -50,21 +50,10 @@
             </header>
             <nav class="mdc-temporary-drawer__content mdc-list-group">
                 <div class="mdc-list">
-                    <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
-                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
-                    </a>
-                    <a class="mdc-list-item" href="#">
-                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
-                    </a>
+                    <div class="menuItemFolder_Groups"></div>
                     <hr class="mdc-list-divider">
-                    <a class="mdc-list-item" href="#">
-                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Char 1
-                    </a>
-                    <a class="mdc-list-item" href="#">
-                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Char 2
-                    </a>
+                    <div class="menuItemFolder_Characters"></div>
                 </div>
-
             </nav>
         </nav>
     </aside>
@@ -124,14 +113,10 @@
     <script>
         //https://material-components-web.appspot.com/
         //https://github.com/material-components/material-components-web/tree/master/packages
-
         window.mdc.autoInit();
 
         var myapp = new myApp();
         loadData()
-        var newChar = new Character("Test 1");
-        myJsonObject.Characters.push(newChar);
-
     </script>
 
 </body>

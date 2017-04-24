@@ -1,0 +1,192 @@
+﻿{
+    "AbilityTypes": {
+        "Str": "Strength",
+        "Dex": "Dexterity",
+        "Abbrev": "Dex",
+        "Con": "Constitution",
+        "Int": "Intelligence",
+        "Wis": "Wisdom",
+        "Cha": "Charisma"
+    },
+    "Languages": [
+
+        { "1": "Aboleth" },
+        { "2": "Abyssal" },
+        { "3": "Aklo" },
+        { "4": "Aquan ('Tongue of the Sea')" },
+        { "5": "Auran ('Tongue of the Heavens')" },
+        { "6": "Boggard" },
+        { "7": "Celestial" },
+        { "8": "Common" },
+        { "9": "Cyclops" },
+        { "10": "Dark Folk" },
+        { "11": "Draconic" },
+        { "12": "Drow (Sign Language)" },
+        { "13": "Druidic" },
+        { "14": "Dwarven" },
+        { "15": "D’ziriak" },
+        { "16": "Elven" },
+        { "17": "Giant" },
+        { "18": "Gnoll" },
+        { "19": "Gnome" },
+        { "20": "Goblin" },
+        { "21": "Grippli" },
+        { "22": "Halfling" },
+        { "23": "Ignan ('Tongue of Fire')" },
+        { "24": "Infernal" },
+        { "25": "Necril" },
+        { "26": "Orc" },
+        { "27": "Protean" },
+        { "28": "Sphinx" },
+        { "29": "Sylvan" },
+        { "30": "Tengu" },
+        { "31": "Terran ('Tongue of Earth')" },
+        { "32": "Treant" },
+        { "33": "Undercommon" },
+        { "34": "Vegepygmy" }
+    ],
+
+    "Races": [
+        { "Name": "Dwarf" },
+        { "Name": "Gnome" },
+        { "Name": "Half-elf" },
+        { "Name": "Halfling" },
+        { "Name": "Half-orc" },
+        { "Name": "Human" },
+        {
+
+            "Elf": {
+                "Physical": {
+                    "Age": {
+                        "Adulthood": 110,
+                        "Intuitive": {
+                            "HighRange": 134,
+                            "LowRange": 114,
+                            "RollWith": "4d6"
+                        },
+                        "Self-Taught": {
+                            "HighRange": 146,
+                            "LowRange": 116,
+                            "RollWith": "6d6"
+                        },
+                        "Trained": {
+                            "HighRange": 170,
+                            "LowRange": 120,
+                            "RollWith": "10d6"
+                        }
+                    },
+                    "Height": {
+                        "Female": {
+                            "Base": 64,
+                            "HighRange": 76,
+                            "LowRange": 66,
+                            "RollWith": "2d6"
+                        },
+                        "Male": {
+                            "Base": 64,
+                            "HighRange": 80,
+                            "LowRange": 66,
+                            "RollWith": "2d8"
+                        }
+                    },
+                    "Weight": {
+                        "Female": {
+                            "Base": 90,
+                            "HighRange": 126,
+                            "LowRange": 96,
+                            "Multiplier": 3,
+                            "RollWith": "2d6"
+                        },
+                        "Male": {
+                            "Base": 110,
+                            "HighRange": 158,
+                            "LowRange": 116,
+                            "Multiplier": 3,
+                            "RollWith": "2d8"
+                        }
+                    }
+                },
+                "Traits": {
+                    "Standard": {
+                        "AbilityModifers": [
+                            { "Dex": 2 },
+                            { "Int": 2 },
+                            { "Con": -2 }
+                        ],
+                        "BaseSpeed": 30,
+                        "Langauges": {
+                            "Allowed": [ 7, 11, 18, 19, 20, 26, 29 ],
+                            "Starting": [ 8, 16 ]
+                        },
+                        "Size": "Medium",
+                        "PrimaryType": "Humanoid",
+                        "Defensive": {
+                            "Immunites": [ "sleep" ],
+                            "Throws": { "Enchantment": 2 }
+                        },
+                        "FeatAndSkill": [
+                            {
+                                "Keen Senses": [
+                                    {
+                                        "Perception": 2
+                                    }
+                                ]
+                            }
+                        ],
+                        "Magical": [
+                            {
+                                "Elven Magic": [
+                                    {
+                                        "SpellResistance": { "CasterLevel": 2 }
+                                    },
+                                    {
+                                        "Spellcraft": 2
+                                    }
+                                ]
+                            }
+                        ],
+                        "Offensive": [
+                            {
+                                "Weapons": [
+                                    "Longbows",
+                                    "longswords",
+                                    "rapiers",
+                                    "shortbows",
+                                    "elven"
+                                ]
+                            }
+                        ],
+                        "Senses": [
+                            { "Low-Light Vision": "Twice as far as humans in dim light" }
+                        ]
+                    },
+                    "Alternate": {
+
+                    }
+
+
+                },
+                "Classes": {
+                    "Favored": { },
+                    "RacialClasses": [ "Ancient Lorekeeper", "Spell Dancer", "Spellbinder", "Treesinger" ],
+                    "PrestigeClasses": [ "Birghtness Seeker" ]
+                },
+
+                "RacialSubTypes": { },
+                "ArcheTypes": { },
+                "Feats": [
+                    "Attuned to the Wild",
+                    "Breadth of Experience",
+                    "Elven Accuracy",
+                    "Elven Battle Training",
+                    "Guardian of the Wild",
+                    "Leaf Singer",
+                    "Light Step",
+                    "Mage of the Wild",
+                    "Spirit of the Wild",
+                    "Stabbing Shot"
+                ]
+            }
+        }
+    ]
+}
