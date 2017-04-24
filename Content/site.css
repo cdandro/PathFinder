@@ -1,0 +1,57 @@
+
+.app--bottom--corner {
+	position: absolute;
+	bottom: 2rem;
+	right: 2rem;
+}
+
+.my-card-container .mdc-card {
+	height: 300px;
+	width: 350px;
+}
+
+
+
+/*          http://codepen.io/DonPage/pen/zhpEt         Green on valid*/
+/*input:focus ~ label, input.used ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+
+input:valid ~ label , input:valid.used ~ label{
+  color: #4fc24f;
+}
+
+input:focus ~ .bar:before {
+  width:50%;
+}
+input:focus ~ .bar:after {
+  width:50%;
+}
+
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+}
+
+input:valid ~ .hightlight {
+	-webkit-animation:validHighlighter 0.3s ease;
+}
+*/
+
+/* 
+	
+	ANIMATIONS ================ 
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+@-webkit-keyframes validHighlighter {
+	from { background:#4fc24f !important; }
+  to 	{ width:0; background:transparent; }
+}
+
+
+	*/

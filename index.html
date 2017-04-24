@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html class="mdc-typography">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Greeting App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="Content/material-components-web.css">
+    <link rel="stylesheet" href="Content/site.css">
+    <script src="Scripts/material-components-web.js"></script>
+    <script src="Scripts/site.js"></script>
+</head>
+
+<body>
+    <!--                      Dialog Start                          -->
+    <aside id="newCharacterDialog" style="visibility:hidden" class="mdc-dialog" role="alertdialog" aria-labelledby="newCharacterDialog-label" aria-describedby="newCharacterDialog-description">
+        <div class="mdc-dialog__surface">
+            <header class="mdc-dialog__header"><h2 id="newCharacterDialog-label" class="mdc-dialog__header__title">New Character Name:</h2></header>
+            <section id="newCharacterDialog-description" class="mdc-dialog__body">
+                <div class="mdc-textfield mdc-textfield--upgraded">
+                    <input type="text" id="newCharacterDialog-textfield" class="mdc-textfield__input" name="chara" aria-controls="newCharacterDialog-textfield-helptext" required>
+                    <label for="newCharacterDialog-textfield" class="mdc-textfield__label">Character Name</label>
+                </div>
+                <!--
+                    mdc-textfield-helptext
+                    mdc-textfield-helptext--validation-msg
+                    mdc-textfield-helptext--persistent
+                -->
+                <p id="newCharacterDialog-textfield-helptext" class="mdc-textfield-helptext" aria-hidden="true">
+                    This is what the character will be called.
+                </p>
+            </section>
+            <footer class="mdc-dialog__footer">
+                <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>
+                <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Save</button>
+            </footer>
+        </div>
+        <div class="mdc-dialog__backdrop"></div>
+    </aside>
+
+    <!--                        Drawer Start                        -->
+    <aside class="mdc-temporary-drawer mdc-temporary-drawer">
+        <nav class="mdc-temporary-drawer__drawer">
+            <header class="mdc-temporary-drawer__header">
+                <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+                    Header here
+                </div>
+            </header>
+            <nav class="mdc-temporary-drawer__content mdc-list-group">
+                <div class="mdc-list">
+                    <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+                    </a>
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                    </a>
+                    <hr class="mdc-list-divider">
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Char 1
+                    </a>
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Char 2
+                    </a>
+                </div>
+
+            </nav>
+        </nav>
+    </aside>
+
+    <!--                        Toolbar Start                       -->
+    <header class="mdc-toolbar mdc-toolbar--fixed">
+        <div class="mdc-toolbar__row">
+            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+                <a class="material-icons menu">menu</a>
+                <span class="mdc-toolbar__title">Title</span>
+            </section>
+        </div>
+    </header>
+
+
+    <main class="mdc-toolbar-fixed-adjust" style="padding-top:1em">
+        <!--                      Textfield Start                   -->
+        <div class="mdc-textfield mdc-textfield--upgraded">
+            <input type="text" id="my-textfield" class="mdc-textfield__input" name="email" aria-controls="my-textfield-helptext" autocomplete="email">
+            <label for="my-textfield" class="mdc-textfield__label">Email Address</label>
+        </div>
+        <!--                      Card Start                        -->
+        <div class="my-card-container">
+            <div class="mdc-card">
+                <section class="mdc-card__primary">
+                    <h1 class="mdc-card__title mdc-card__title--large">Title goes here</h1>
+                    <h2 class="mdc-card__subtitle">Subtitle here</h2>
+                </section>
+                <section class="mdc-card__supporting-text">
+                    Some test to show
+                </section>
+                <section class="mdc-card__actions">
+                    <button class="mdc-button mdc-button--compact mdc-card__action">Action 1</button>
+                    <button class="mdc-button mdc-button--compact mdc-card__action">Action 2</button>
+                </section>
+            </div>
+        </div>
+        <!--                      Fab Start                         -->
+        <button class="addButton mdc-fab app--bottom--corner mdc-menu-anchor" aria-label="Add">
+            <span class="mdc-fab__icon material-icons">add</span>
+            <!--                    Simple Menu Start               -->
+            <div class="addMenu mdc-simple-menu" tabindex="-1">
+                <!--  add class 'mdc-simple-menu--theme-dark' for dark theme -->
+                <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+                    <li class="mdc-list-item" role="menuitem" tabindex="0">
+                        New Group
+                    </li>
+                    <li id="menuCreateNewCharacter" class="mdc-list-item" role="menuitem" tabindex="0">
+                        New Character
+                    </li>
+                </ul>
+            </div>
+        </button>
+    </main>
+
+
+    <script>
+        //https://material-components-web.appspot.com/
+        //https://github.com/material-components/material-components-web/tree/master/packages
+
+        window.mdc.autoInit();
+
+        var myapp = new myApp();
+        loadData()
+        var newChar = new Character("Test 1");
+        myJsonObject.Characters.push(newChar);
+
+    </script>
+
+</body>
+</html>
