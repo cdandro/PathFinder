@@ -1,0 +1,212 @@
+﻿{
+  "Categories": {
+    "Standard": {
+      "Low": 1,
+      "High": 10
+    },
+    "Advanced": {
+      "Low": 11,
+      "High": 20
+    },
+    "Monstrous": {
+      "Low": 21,
+      "High": 30at
+    },
+    "Very Powerful": {
+      "Low": 31,
+      "High": 99
+    }
+
+  },
+  /*  
+    Need to get trait information
+      http://www.d20pfsrd.com/bestiary/rules-for-monsters/creature-types/
+  */
+  "Types": {
+    "Aberration": {
+      "HitDie": 8,
+      "BAB": "3/4",
+      "GoodSavingThrows": [ "Will" ],
+      "SkillRanks": 4,
+      "ClassSkills": [ "Acrobatics", "Climb", "Escape Artist", "Fly", "Intimidate", "Knowledge", "Perception", "Spellcraft", "Stealth", "Survival", "Swim" ]
+    },
+    "Animal": {
+      "HitDie": 8,
+      "BAB": "3/4",
+      "GoodSavingThrows": [ "Fort", "Ref" ],
+      "SkillRanks": 2,
+      "ClassSkills": [ "Acrobatics", "Climb", "Fly", "Perception", "Stealth", "Swim" ]
+    },
+    "Construct": {
+      "HitDie": 10,
+      "BAB": "HD",
+      "GoodSavingThrows": [ "—" ],
+      "SkillRanks": 2,
+      "ClassSkills": [ ]
+    },
+    "Dragon": {
+      "HitDie": 12,
+      "BAB": "HD",
+      "GoodSavingThrows": [ "Fort", "Ref", "Will" ],
+      "SkillRanks": 6,
+      "ClassSkills": [ "Appraise", "Bluff", "Climb", "Craft", "Diplomacy", "Fly", "Heal", "Intimidate", "Knowledge", "Linguistics", "Perception", "Sense Motive", "Spellcraft", "Stealth", "Survival", "Swim", "Use Magic Device" ]
+    },
+    "Fey": {
+      "HitDie": 6,
+      "BAB": "1/2",
+      "GoodSavingThrows": [ "Ref", "Will" ],
+      "SkillRanks": 6,
+      "ClassSkills": [ "Acrobatics", "Bluff", "Climb", "Craft", "Diplomacy", "Disguise", "Escape Artist", "Fly", "Knowledge", "Knowledge", "Knowledge", "Perception", "Perform", "Sense Motive", "Sleight of Hand", "Stealth", "Swim", "Use Magic Device" ]
+    },
+    "Humanoid": {
+      "HitDie": 8,
+      "BAB": "3/4",
+      "GoodSavingThrows": [ "Varies (any one)" ],
+      "SkillRanks": 2,
+      "ClassSkills": [ "Climb", "Craft", "Handle Animal", "Heal", "Profession", "Ride", "Survival" ]
+    },
+    "Magical beast": {
+      "HitDie": 10,
+      "BAB": "HD",
+      "GoodSavingThrows": [ "Fort", "Ref" ],
+      "SkillRanks": 2,
+      "ClassSkills": [ "Acrobatics", "Climb", "Fly", "Perception", "Stealth", "Swim" ]
+    },
+    "Monstrous humanoid": {
+      "HitDie": 10,
+      "BAB": "HD",
+      "GoodSavingThrows": [ "Ref", "Will" ],
+      "SkillRanks": 4,
+      "ClassSkills": [ "Climb", "Craft", "Fly", "Intimidate", "Perception", "Ride", "Stealth", "Survival", "Swim" ]
+    },
+    "Ooze": {
+      "HitDie": 8,
+      "BAB": "3/4",
+      "GoodSavingThrows": [ "—" ],
+      "SkillRanks": 2,
+      "ClassSkills": [ ]
+    },
+    "Outsider": {
+      "HitDie": 10,
+      "BAB": "HD",
+      "GoodSavingThrows": [ "Varies (any two)" ],
+      "SkillRanks": 6,
+      "ClassSkills": [ "Bluff", "Craft", "Knowledge", "Perception", "Sense Motive", "Stealth" ]
+    },
+    "Plant": {
+      "HitDie": 8,
+      "BAB": "3/4",
+      "GoodSavingThrows": [ "Fort" ],
+      "SkillRanks": 2,
+      "ClassSkills": [ "Perception", "Stealth" ]
+    },
+    "Undead": {
+      "HitDie": 8,
+      "BAB": "3/4",
+      "GoodSavingThrows": [ "Will" ],
+      "SkillRanks": 4,
+      "ClassSkills": [ "Climb", "Disguise", "Fly", "Intimidate", "Knowledge", "Knowledge", "Perception", "Sense Motive", "Spellcraft", "Stealth" ]
+    },
+    "Vermin": {
+      "HitDie": 8,
+      "BAB": "3/4",
+      "GoodSavingThrows": [ "Fort" ],
+      "SkillRanks": 2,
+      "ClassSkills": [ ]
+    }
+  },
+  "SubTypes": {
+    "adlet": { },
+    "aeon": { },
+    "agathion": { },
+    "air": { },
+    "angel": { },
+    "aquatic": { },
+    "archon": { },
+    "asura": { },
+    "augmented": { },
+    "azata": { },
+    "behemoth": { },
+    "catfolk": { },
+    "chaotic": { },
+    "clockwork": { },
+    "cold": { },
+    "colossus": { },
+    "daemon": { },
+    "dark folk": { },
+    "deep one": { },
+    "demodand": { },
+    "demon": { },
+    "devil": { },
+    "div": { },
+    "dwarf": { },
+    "earth": { },
+    "elemental": { },
+    "elf": { },
+    "evil": { },
+    "extraplanar": { },
+    "fire": { },
+    "giant": { },
+    "gnome": { },
+    "goblinoid": { },
+    "godspawn": { },
+    "good": { },
+    "great old one": { },
+    "halfling": { },
+    "herald": { },
+    "hive": { },
+    "human": { },
+    "incorporeal": { },
+    "inevitable": { },
+    "kaiju": { },
+    "kami": { },
+    "kasatha": { },
+    "kitsune": { },
+    "kyton": { },
+    "lawful": { },
+    "leshy": { },
+    "mythic": { },
+    "native": { },
+    "nightshade": { },
+    "oni": { },
+    "orc": { },
+    "protean": { },
+    "psychopomp": { },
+    "qlippoth": { },
+    "rakshasa": { },
+    "ratfolk": { },
+    "reptilian": { },
+    "robot": { },
+    "samsaran": { },
+    "sasquatch": { },
+    "shapechanger": { },
+    "swarm": { },
+    "troop": { },
+    "udaeus": { },
+    "unbreathing": { },
+    "vanara": { },
+    "vishkanya": { },
+    "water": { }
+  },
+  "Third Party": {
+    "Acid": { },
+    "Daemon": { },
+    "Demodand": { },
+    "Electricity": { },
+    "Fungus": { },
+    "Gravity": { },
+    "Grippli": { },
+    "Kuah-lij": { },
+    "N’gathau": { },
+    "Ogren": { },
+    "Ogrillon": { },
+    "Psionic": { },
+    "Skulk": { },
+    "Stormwarden": { },
+    "Tabaxi": { },
+    "Time": { },
+    "Vapor": { }
+  }
+
+
+}
